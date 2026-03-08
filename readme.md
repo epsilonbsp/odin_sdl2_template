@@ -31,11 +31,11 @@ If you want SDL3 instead, check [Odin SDL3 Template](https://github.com/deltasam
 * On Windows you need to copy SDL2 library binaries from Odin vendor directory into place where your executable is located, in this template that will be `build/output`
 * Alternatively you can download SDL2 library binaries from Odin repo into `build/output` by running:
 
-      .\build.bat get-sdl2
+      .\build.bat get-sdl
 
 * If you want to build SDL2 library binaries yourself, then run build script
 
-      .\build.bat build-sdl2
+      .\build.bat build-sdl
 
 ### Linux
 * Install SDL2 through apt
@@ -51,7 +51,7 @@ If you want SDL3 instead, check [Odin SDL3 Template](https://github.com/deltasam
 
   * Run build script
 
-        ./build.sh build-sdl2
+        ./build.sh build-sdl
 
 ## Usage
 ### Windows
