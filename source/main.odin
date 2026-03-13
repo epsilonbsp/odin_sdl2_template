@@ -197,23 +197,11 @@ main :: proc() {
         }
 
         if (sdl.GetRelativeMouseMode()) {
-            speed := time_delta * movement_speed
-
-            if key_state[sdl.SCANCODE_A] == sdl.PRESSED {
-                move_camera(&camera, {-speed, 0, 0})
-            }
-
-            if key_state[sdl.SCANCODE_D] == sdl.PRESSED {
-                move_camera(&camera, {speed, 0, 0})
-            }
-
-            if key_state[sdl.SCANCODE_S] == sdl.PRESSED {
-                move_camera(&camera, {0, 0, -speed})
-            }
-
-            if key_state[sdl.SCANCODE_W] == sdl.PRESSED {
-                move_camera(&camera, {0, 0, speed})
-            }
+            fly_camera(
+                &camera,
+                {bool(key_state[sdl.SCANCODE_A]), bool(key_state[sdl.SCANCODE_D]), bool(key_state[sdl.SCANCODE_S]), bool(key_state[sdl.SCANCODE_W])},
+                time_delta * movement_speed
+            )
         }
 
         compute_camera_projection(&camera, f32(viewport_x) / f32(viewport_y))
