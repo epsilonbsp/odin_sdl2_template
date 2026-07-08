@@ -50,4 +50,6 @@ if "%~1" == "build" (
 
     copy /Y "%VENDOR_DIR%\sdl\build\Release\SDL2.dll" "%OUTPUT_DIR%\SDL2.dll"
     copy /Y "%VENDOR_DIR%\sdl\build\Release\SDL2.lib" "%OUTPUT_DIR%\SDL2.lib"
+) else (
+    echo No valid command specified
 )
